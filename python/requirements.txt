@@ -10,8 +10,6 @@ grpcio==1.19.0
 gunicorn==19.9.0
 keras==2.2.2
 matplotlib==3.0.0
-mkl-fft==1.0.10
-mkl-random==1.0.2
 olefile==0.46
 opencv-python==3.4.2.16
 pandas==0.23.4
