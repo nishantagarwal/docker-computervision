@@ -67,7 +67,7 @@ RUN cd /usr/local/bin && ln -s /usr/bin/python3 python && ln -s /usr/bin/pip3 pi
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # Install python packages
-COPY python/requirements.txt /install/
+COPY python36/requirements.txt /install/
 RUN pip install -r requirements.txt
         
 # Download OSS projects
