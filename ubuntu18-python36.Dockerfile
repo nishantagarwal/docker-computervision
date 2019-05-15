@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # install linux packages
 COPY linux/ubuntu18/packages.txt /install/
 WORKDIR /install
