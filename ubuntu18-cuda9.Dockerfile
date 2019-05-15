@@ -89,4 +89,4 @@ RUN /oss/protobuf/bin/protoc ./object_detection/protos/*.proto --python_out=.
 RUN python setup.py install
 
 # Remove temp and cache folders
-RUN rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt/* && rm -rf /root/.cache/* && rm -rf /install
+RUN rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt/* && rm -rf /root/.cache/* && rm -rf /install && apt-get clean
