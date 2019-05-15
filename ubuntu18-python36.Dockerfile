@@ -14,7 +14,7 @@ RUN cd /usr/local/bin && ln -s /usr/bin/python3 python && ln -s /usr/bin/pip3 pi
 
 # Install python packages
 COPY python36/requirements.txt /install/
-RUN pip install -r -q requirements.txt
+RUN pip install -q -r requirements.txt
         
 # Download OSS projects
 RUN wget -q https://github.com/cocodataset/cocoapi/archive/master.zip -O cocoapi.zip && \
