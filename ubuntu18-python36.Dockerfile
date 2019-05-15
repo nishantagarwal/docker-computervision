@@ -14,12 +14,12 @@ RUN cd /usr/local/bin && ln -s /usr/bin/python3 python && ln -s /usr/bin/pip3 pi
 
 # Install python packages
 COPY python36/requirements.txt /install/
-RUN pip install -r requirements.txt
+RUN pip install -r -q requirements.txt
         
 # Download OSS projects
-RUN wget https://github.com/cocodataset/cocoapi/archive/master.zip -O cocoapi.zip && \
-    wget https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip -O protobuf.zip && \
-    wget https://github.com/tensorflow/models/archive/59f7e80ac8ad54913663a4b63ddf5a3db3689648.zip -O tensorflow-models.zip
+RUN wget -q https://github.com/cocodataset/cocoapi/archive/master.zip -O cocoapi.zip && \
+    wget -q https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip -O protobuf.zip && \
+    wget -q https://github.com/tensorflow/models/archive/59f7e80ac8ad54913663a4b63ddf5a3db3689648.zip -O tensorflow-models.zip
 RUN unzip cocoapi.zip && unzip protobuf.zip -d ./protobuf && unzip tensorflow-models.zip -d ./tensorflow-models
 RUN mkdir /oss
 
