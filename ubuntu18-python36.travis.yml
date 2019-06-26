@@ -7,6 +7,6 @@ before_install:
   - docker build -t nishantagarwal/computervision:ubuntu18-python36 -f ubuntu18-python36.Dockerfile .
 
 script:
-  - docker run nishantagarwal/computervision:ubuntu18-python36 /bin/bash -c "pdftoppm -v; pip list; java -version; javac -version"
+  - docker run nishantagarwal/computervision:ubuntu18-python36 /bin/bash -c "python --version; pip list; java -version; apt list --installed"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push nishantagarwal/computervision:ubuntu18-python36
