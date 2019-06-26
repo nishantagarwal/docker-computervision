@@ -8,4 +8,5 @@ before_install:
 
 script:
   - docker run nishantagarwal/computervision:ubuntu18-python36 /bin/bash -c "pdftoppm -v; pip list; java -version; javac -version"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push nishantagarwal/computervision:ubuntu18-python36
