@@ -5,9 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # install linux packages
 COPY linux/ubuntu18/packages.txt /install/
 WORKDIR /install
-RUN apt-get -qq update \
-    && xargs -a packages.txt apt-get -qq install -y --no-install-recommends \
-    && apt-get clean
+RUN apt-get -qq update && xargs -a packages.txt apt-get -qq install -y --no-install-recommends && apt-get clean
 
 # Set python
 RUN cd /usr/local/bin && ln -s /usr/bin/python3 python && ln -s /usr/bin/pip3 pip
