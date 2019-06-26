@@ -67,7 +67,9 @@ ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:$LD
 
 # Install python packages
 COPY python36/requirements.txt /install/
+COPY python36/requirements-gpu.txt /install/
 RUN pip install -q -r requirements.txt
+RUN pip install -q -r requirements-gpu.txt
         
 # Download OSS projects
 RUN wget -q https://github.com/cocodataset/cocoapi/archive/master.zip -O cocoapi.zip && \
