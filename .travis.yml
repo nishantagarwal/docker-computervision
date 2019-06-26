@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t computervision:ubuntu18-cuda9 -f ubuntu18-cuda9.Dockerfile .
+  - docker build -t computervision:ubuntu18-python36 -f ubuntu18-python36.Dockerfile .
 
 script:
-  - docker run computervision:ubuntu18-cuda9 /bin/bash -c "pdftoppm -v && pip list"
+  - docker run computervision:ubuntu18-python36 /bin/bash -c "pdftoppm -v; pip list; java -version; javac -version"
