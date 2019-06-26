@@ -4,8 +4,9 @@ services:
   - docker
 
 before_install:
-  - docker build -t computervision:ubuntu18-cuda9 -f ubuntu18-cuda9.Dockerfile .
+  - docker build -t nishantagarwal/computervision:ubuntu18-cuda9 -f ubuntu18-cuda9.Dockerfile .
 
 script:
-  - docker run computervision:ubuntu18-cuda9 /bin/bash -c "pdftoppm -v; pip list; java -version; javac -version"
+  - docker run nishantagarwal/computervision:ubuntu18-cuda9 /bin/bash -c "pdftoppm -v; pip list; java -version; javac -version"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push nishantagarwal/computervision:ubuntu18-cuda9
