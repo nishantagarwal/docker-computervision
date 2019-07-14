@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY ubuntu-packages.txt /install/
 WORKDIR /install
 RUN apt-get update \
-    && xargs -a packages.txt apt-get install -y --no-install-recommends \
+    && xargs -a ubuntu-packages.txt apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -36,7 +36,7 @@ RUN cd /usr/local/bin && ln -s /usr/bin/python3 python && ln -s /usr/bin/pip3 pi
 # Install python packages
 WORKDIR /install
 COPY python-requirements.txt /install/
-RUN pip install -r requirements.txt
+RUN pip install -r python-requirements.txt
 
 # Purge cache and temp folders
 RUN rm -rf /var/cache/apt/*
