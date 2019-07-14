@@ -1,0 +1,12 @@
+jamspell==0.0.11
+nltk==3.2.2
+opencv-python==4.1
+pandas
+pdf2image
+pytesseract
+requests
+scikit-image==0.15.0
+scikit-learn==0.20.2
+tiffcapture
+https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.3.0-cp36-cp36m-linux_x86_64.whl
